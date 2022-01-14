@@ -32,10 +32,21 @@ const {
 // > sqrt(4);
 // < 16
 
-function exponencial(exp) {
-
+function exponencial(exp) { //        3
+ return function hija(num) { //    5
+     total = Math.pow(num, exp);
+     return total
+ }
 }
 
+
+
+// var resultado = number  //       5 x 5>> 25 >> 125
+//      while(i <= exp) {
+//          resultado = resultado * number;
+//          i++;
+//      }
+//      return resultado
 // ----- Recursión -----
 
 // EJERCICIO 2
@@ -70,7 +81,15 @@ function exponencial(exp) {
 // Aclaraciones: el segundo parametro que recibe la funcion ('direccion') puede ser pasado vacio (null)
 
 function direcciones(laberinto) {
+    mov = " "
+    for(let i in laberinto.length) {
+        if(i !== "pared") {
+            mov.push(i)
+        }
 
+    }
+
+return mov
 }
 
 
@@ -89,8 +108,14 @@ function direcciones(laberinto) {
 
 function deepEqualArrays(arr1, arr2) {
 
-}
+    for(var i = 0; i < arr1.length; i++) {
 
+      if(arr1.length[i] === arr2[i]) {
+        return true
+        }
+        else return false
+    }
+} 
 
 
 // ----- LinkedList -----
@@ -109,7 +134,7 @@ function OrderedLinkedList() {
 }
 // notar que Node esta implementado en el archivo DS
 
-// Y el metodo print que permite visualizar la lista:
+// lista:Y el metodo print que permite visualizar la 
 OrderedLinkedList.prototype.print = function(){
     let print = 'head'
     let pointer = this.head
